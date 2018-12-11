@@ -114,7 +114,7 @@ class Table extends React.Component<Props, State> {
     rowHeight: 46,
     headerHeight: 40,
     minHeight: 0,
-    rowExpandedHeight: 100,
+    rowExpandedHeight: 200,
     hover: true,
     showHeader: true,
     rowKey: 'key',
