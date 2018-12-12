@@ -830,13 +830,13 @@ class Table extends React.Component<Props, State> {
     let rows = null;
     let bodyHeight = 0;
     if (data && data.length > 0) {
-      rows = data.map((rowData, index, row) => {
+      rows = data.map((rowData, index) => {
         let maxHeight = tableRowsMaxHeight[index];
         let nextRowHeight = maxHeight ? maxHeight + CELL_PADDING_HEIGHT : rowHeight;
         let shouldRenderExpandedRow = this.shouldRenderExpandedRow(rowData);
 
         if (shouldRenderExpandedRow) {
-          let expanded = row.querySelector(`.${this.addPrefix('row-expanded')}`);
+          let expanded = this.tableRows[index].querySelector(`.${this.addPrefix('row-expanded')}`);
           nextRowHeight += getHeight(expanded);
         }
 
