@@ -768,7 +768,7 @@ class Table extends React.Component<Props, State> {
   renderRowExpanded(rowData?: Object) {
     const { renderRowExpanded, rowExpandedHeight } = this.props;
     const styles = {
-      height: auto
+      height: 'auto'
     };
 
     if (typeof renderRowExpanded === 'function') {
