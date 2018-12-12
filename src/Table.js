@@ -114,7 +114,7 @@ class Table extends React.Component<Props, State> {
     rowHeight: 46,
     headerHeight: 40,
     minHeight: 0,
-    rowExpandedHeight: 200,
+    rowExpandedHeight: 100,
     hover: true,
     showHeader: true,
     rowKey: 'key',
@@ -768,7 +768,7 @@ class Table extends React.Component<Props, State> {
   renderRowExpanded(rowData?: Object) {
     const { renderRowExpanded, rowExpandedHeight } = this.props;
     const styles = {
-      height: rowExpandedHeight
+      height: 'auto'
     };
 
     if (typeof renderRowExpanded === 'function') {
@@ -830,13 +830,14 @@ class Table extends React.Component<Props, State> {
     let rows = null;
     let bodyHeight = 0;
     if (data && data.length > 0) {
-      rows = data.map((rowData, index) => {
+      rows = data.map((rowData, index, row) => {
         let maxHeight = tableRowsMaxHeight[index];
         let nextRowHeight = maxHeight ? maxHeight + CELL_PADDING_HEIGHT : rowHeight;
         let shouldRenderExpandedRow = this.shouldRenderExpandedRow(rowData);
 
         if (shouldRenderExpandedRow) {
-          nextRowHeight += rowExpandedHeight;
+          let expanded = row.querySelector(`.${this.addPrefix('row-expanded')}`);
+          nextRowHeight += getHeight(expanded);
         }
 
         /**
