@@ -12,7 +12,8 @@
     "lint": "eslint src  *.js",
     "test": "npm run lint && cross-env NODE_ENV=test karma start --single-run",
     "clean": "rm -rf node_modules/gh-pages/.cache",
-    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls",
+    "prepare": "npm run build"
   },
   "author": "simonguo.2009@gmail.com",
   "license": "MIT",
@@ -23,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:rsuite/rsuite-table.git"
+    "url": "git@github.com:INoceanIN/rsuite-table.git"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -37,6 +38,7 @@
     "react-dom": "^0.14.9 || >=15.3.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
