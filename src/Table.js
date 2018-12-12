@@ -767,13 +767,14 @@ class Table extends React.Component<Props, State> {
 
   renderRowExpanded(rowData?: Object) {
     const { renderRowExpanded, rowExpandedHeight } = this.props;
-    const styles = {
-      height: 'auto'
-    };
+    // const styles = {
+    //   height: 'auto'
+    // };
 
     if (typeof renderRowExpanded === 'function') {
       return (
-        <div className={this.addPrefix('row-expanded')} style={styles}>
+        // <div className={this.addPrefix('row-expanded')} style={styles}>
+        <div className={this.addPrefix('row-expanded')}>
           {renderRowExpanded(rowData)}
         </div>
       );
