@@ -838,7 +838,9 @@ class Table extends React.Component<Props, State> {
         if (shouldRenderExpandedRow) {
           let expand=this.tableRows[index].querySelector(`.${this.addPrefix('row-expanded')}`);
           console.log('expand',expand);
+          console.log('expandHeight',getHeight(expand));
           nextRowHeight += expand? getHeight(expand): 0;
+          console.log('nextRowHeight',nextRowHeight);
         }
 
         /**
